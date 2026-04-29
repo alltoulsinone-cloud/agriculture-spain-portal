@@ -81,7 +81,7 @@ function updateLanguage(lang) {
 
 // بيانات تجريبية للعقود (يمكن استبدالها لاحقاً بجلب من Google Sheets)
 const demoContracts = {
-    "ESP-AGR-2025-001": { status: "accepted", name_es: "Ahmed Benjelloun", name_ar: "أحمد بنجلون" },
+    "ESP-AGR-2026-069": { status: "accepted", name_es: "Aziz KHAICH", name_ar: "عزيز اكحيش" },
     "ESP-AGR-2025-002": { status: "pending", name_es: "Fatima Zahra", name_ar: "فاطمة الزهراء" },
     "ESP-AGR-2025-003": { status: "rejected", name_es: "Youssef El Mansouri", name_ar: "يوسف المنصوري" }
 };
