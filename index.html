@@ -3,82 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Portal de Contratos Agrícolas | España - Marruecos</title>
+    <meta name="description" content="Portal oficial para trabajadores marroquíes - Consulta el estado de tu contrato agrícola en España">
+    <meta name="keywords" content="contratos agrícolas, España, Marruecos, trabajo temporal">
+    <meta name="author" content="AgroEmpleo España">
+    <title>AgroPortal España | Portal de Contratos Agrícolas</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for clean typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
 </head>
 <body>
 
-    <!-- Language Switcher -->
-    <div class="lang-switch">
-        <button id="btn-es" class="active" data-lang="es">🇪🇸 Español</button>
-        <button id="btn-ar" data-lang="ar">🇲🇦 العربية</button>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Agro<span class="highlight">Portal</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span data-key="nav_home">Inicio</span></a>
+                <a href="#info" class="nav-link"><i class="fas fa-info-circle"></i> <span data-key="nav_info">Información</span></a>
+                <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> <span data-key="nav_gallery">Galería</span></a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span data-key="nav_contact">Contacto</span></a>
+            </div>
+            <div class="lang-switch">
+                <button id="btn-es" class="active" data-lang="es">🇪🇸 ES</button>
+                <button id="btn-ar" data-lang="ar">🇲🇦 AR</button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section مع تأثير بارالاكس -->
+    <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 data-key="hero_title">Trabajo agrícola en España</h1>
-            <p data-key="hero_sub">Bienvenido al portal oficial para trabajadores marroquíes. Consulta el estado de tu contrato.</p>
+            <div class="floating-badge">
+                <i class="fas fa-check-circle"></i> 
+                <span data-key="badge">+500 Contratos Gestionados 2025</span>
+            </div>
+            <h1 data-key="hero_title">Trabajo agrícola <span class="gradient-text">en España</span></h1>
+            <p data-key="hero_sub">Bienvenido al portal oficial para trabajadores marroquíes. Consulta el estado de tu contrato de forma rápida y segura.</p>
+            
+            <!-- بطاقة البحث المحسنة -->
             <div class="search-card">
-                <h3 data-key="search_title">🔍 Consultar mi contrato</h3>
+                <h3><i class="fas fa-search"></i> <span data-key="search_title">Consultar mi contrato</span></h3>
                 <div class="input-group">
-                    <input type="text" id="contractNumber" placeholder="Ej: ESP-AGR-0000-000" data-key="input_placeholder">
-                    <button id="searchBtn" data-key="search_btn">Buscar</button>
+                    <i class="fas fa-id-card input-icon"></i>
+                    <input type="text" id="contractNumber" placeholder="Ej: MAR-ESP-2025-AK" data-key="input_placeholder">
+                    <button id="searchBtn" data-key="search_btn">
+                        <i class="fas fa-arrow-right"></i> <span>Buscar</span>
+                    </button>
                 </div>
                 <div id="resultBox" class="result-box hidden"></div>
+                <div class="search-examples">
+                    <small data-key="examples_title">📋 Ejemplos para probar:</small>
+                    <div class="example-buttons">
+                        <button class="example-btn" data-code="MAR-ESP-2025-AK">Aziz Khaich (Aceptado)</button>
+                        <button class="example-btn" data-code="ESP-AGR-2025-002">Ejemplo Pendiente</button>
+                        <button class="example-btn" data-code="ESP-AGR-2025-003">Ejemplo Rechazado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- زر التمرير للأسفل -->
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- إحصائيات سريعة -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="156">0</h3>
+                    <p data-key="stat_accepted">Contratos Aceptados</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="23">0</h3>
+                    <p data-key="stat_pending">En Revisión</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-building"></i>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="12">0</h3>
+                    <p data-key="stat_companies">Empresas Asociadas</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-week"></i>
+                <div class="stat-info">
+                    <h3 class="counter" data-target="45">0</h3>
+                    <p data-key="stat_days">Días de Respuesta</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Motivational / informative section -->
-    <section class="info-cards">
+    <!-- بطاقات المعلومات المحسنة -->
+    <section class="info-cards" id="info">
         <div class="container">
-            <h2 data-key="benefits_title">🌱 ¿Por qué trabajar en el sector agrícola español?</h2>
+            <div class="section-header">
+                <h2 data-key="benefits_title">🌱 ¿Por qué trabajar en el sector agrícola español?</h2>
+                <p data-key="benefits_subtitle">Oportunidades laborales con garantías y derechos para trabajadores marroquíes</p>
+            </div>
             <div class="card-grid">
                 <div class="card">
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
                     <h3 data-key="benefit_1_title">Contratos justos</h3>
-                    <p data-key="benefit_1_desc">Salario conforme a convenio, seguridad social y alojamiento digno.</p>
+                    <p data-key="benefit_1_desc">Salario conforme a convenio, seguridad social y alojamiento digno garantizado.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-chart-line"></i>
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3 data-key="benefit_2_title">Desarrollo profesional</h3>
-                    <p data-key="benefit_2_desc">Formación continua y oportunidades de crecimiento.</p>
+                    <p data-key="benefit_2_desc">Formación continua, certificaciones y oportunidades de crecimiento laboral.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-users"></i>
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <h3 data-key="benefit_3_title">Entorno multicultural</h3>
-                    <p data-key="benefit_3_desc">Equipo diverso, respeto y apoyo mutuo.</p>
+                    <p data-key="benefit_3_desc">Equipo diverso, respeto, apoyo mutuo y acompañamiento lingüístico.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-key="benefit_4_title">Asistencia legal</h3>
+                    <p data-key="benefit_4_desc">Asesoramiento jurídico gratuito y defensa de tus derechos laborales.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery / Inspiring images -->
-    <section class="gallery">
+    <!-- المعرض المحسن -->
+    <section class="gallery" id="gallery">
         <div class="container">
-            <h2 data-key="gallery_title">📸 Jornadas de trabajo y vida en España</h2>
-            <div class="image-row">
-                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=500&auto=format" alt="Campo de fresas">
-                <img src="https://images.unsplash.com/photo-1620101176614-cd8b3c3f8466?w=500&auto=format" alt="Trabajadores cosechando">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=500&auto=format" alt="Vivienda compartida">
+            <div class="section-header">
+                <h2 data-key="gallery_title">📸 Jornadas de trabajo y vida en España</h2>
+                <p data-key="gallery_subtitle">Conoce el día a día de nuestros trabajadores en las mejores condiciones</p>
             </div>
-            <p class="photo-credit" data-key="photo_credit">Imágenes con fines ilustrativos - entorno real en Huelva, Murcia, Lleida.</p>
+            <div class="grid-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&auto=format" alt="Campo de fresas" loading="lazy">
+                    <div class="overlay">
+                        <span>Cosecha de fresas</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1620101176614-cd8b3c3f8466?w=600&auto=format" alt="Trabajadores" loading="lazy">
+                    <div class="overlay">
+                        <span>Equipo de trabajo</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&auto=format" alt="Vivienda" loading="lazy">
+                    <div class="overlay">
+                        <span>Alojamiento digno</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532117188753-5b79c1a40fa0?w=600&auto=format" alt="Campo de olivos" loading="lazy">
+                    <div class="overlay">
+                        <span>Campiña andaluza</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- نموذج التواصل -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 data-key="contact_title">¿Necesitas ayuda?</h2>
+                    <p data-key="contact_desc">Nuestro equipo de soporte está disponible para resolver tus dudas</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono 24/7</strong>
+                                <p>+34 900 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>contratos@agroempleo.es</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Oficina en Marruecos</strong>
+                                <p>Casablanca, Maroc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <input type="text" placeholder="Número de contrato (opcional)">
+                    <textarea rows="4" placeholder="Tu mensaje" required></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer محسن -->
     <footer>
         <div class="container">
-            <p data-key="footer_text">© 2025 Portal de Contratos Agrícolas España-Marruecos. Todos los derechos reservados.</p>
-            <p data-key="footer_support">Atención al trabajador: +34 900 123 456 | contratos@agroempleo.es</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-leaf"></i> AgroPortal</h3>
+                    <p data-key="footer_desc">Portal oficial de gestión de contratos agrícolas entre España y Marruecos</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-key="footer_links">Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#info">Información</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-key="footer_text">© 2025 Portal de Contratos Agrícolas España-Marruecos. Todos los derechos reservados.</p>
+                <p data-key="footer_support">📞 Atención al trabajador: +34 900 123 456 | ✉️ contratos@agroempleo.es</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast hidden"></div>
 
     <script src="script.js"></script>
 </body>
