@@ -116,13 +116,13 @@ const demoContracts = {
     "MAR-ESP-2025-AK": {
         status: "accepted",
         name_es: "Amine bihi",
-        name_ar: "عزيز اكحيش",
+        name_ar: "Amine Bihi",
         id_number: "IB226097",
         dob: "01.01.1994",
         place_of_birth: "Fquih Ben Salah",
         position: "Trabajador agrícola especializado",
         location: "Almería",
-        start_date: "15.05.2025",
+        start_date: "15.05.2026",
         contract_image: "images/1000280653.jpg"
     }
 };
